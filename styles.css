@@ -23,10 +23,11 @@ a {
 
 .name {
     color: rgb(17, 159, 147);
+    animation-duration: 2s;
+    animation-name: slidein;
+    animation-iteration-count:1;
 
 }
-
-
 
 h2 {
     color: #66BFBF;
@@ -39,6 +40,9 @@ h2 {
 
 .pro {
       text-decoration: underline;
+      animation-duration: 2s;
+      animation-name: slidein;
+      animation-iteration-count:1;
 }
 
 h3 {
@@ -52,14 +56,13 @@ h3 {
 }
 
 .top-container {
-    background-color: rgba(221, 251, 248, 0.74);
+    background-color: rgba(215, 249, 246, 0.74);
     position: relative;
     padding-top: 80px;
 } 
 
 .mid-container {
     text-align: justify;
-
 }
 
 .bottom-container {
@@ -75,38 +78,90 @@ h3 {
 }
 
 .footer-link:hover {
-    color: rgb(248, 250, 251);
+    color: rgb(243, 246, 248);
 }
 
 .top-cloud{
     position: absolute;
     top : 50px;
     right: 322px;
+    animation-name: slidein;
+    animation-duration: 4s;
 }
+
+@keyframes slidein {
+    from {
+      margin-left: 10%;
+      width: 0%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 9.85%;
+    }
+  }
 
 .bottom-cloud {
     position: absolute;
     left: 300px;
     bottom: 300px;
+    animation-name: slidein;
+    animation-duration: 4s;
 }
 
+.mntn {
+    margin-top: 98px;
+    animation-name: slideout;
+    animation-duration: 4s;
+}
+
+@keyframes slideout {
+    from {
+      margin-bottom: 5%;
+      width: 77%;
+    }
+  
+    to {
+      margin-left: 0%;
+      width: 39.4%;
+    }
+  }
+
+
 .profil {
+    position: relative;
     margin-top: 50px;
     width: 170px;
     height: 170px;
 }
+
 .py {
     width: 17%;
     float: left;
     margin-right: 35px;
     margin-top: 52px;
     margin-bottom: 100px;
+   
 }
 
+
 .html {
-    width: 28%;
+    width: 21%;
     float: right;
-    margin: 1px;
+    margin-left: 17px;
+    margin-top: 25px;
+}
+
+.css {
+    width: 22%;
+    float: left;
+    margin-right: 22px;
+}
+
+.react {
+    width: 19%;
+    float: right;
+    margin-left: 20px;
     margin-top: 25px;
 }
 
@@ -131,7 +186,120 @@ hr {
     margin: 40px auto 55px;       
 
 }
+.rotatingText {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .rotatingText-adjective { 
+    font-family: 'Open Sans', sans-serif;
+    color: rgb(10, 186, 163);
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 700;
+    left: 0;
+    margin-bottom: 150px;
+    position: relative;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+  }
+  .rotatingText-adjective { 
+    font-family: 'Open Sans', sans-serif;
+    font-size:22px;
+    font-style: normal;
+    font-weight: 700;
+    left: 0;
+    margin-bottom: 450px;
+    margin-top: 270px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+  }
 
+  @keyframes rotate {
+    0% {
+      opacity: 0;
+    }
+    
+    20%, 80% {
+      opacity: 1;
+    }
+    
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .rotatingText-adjective:nth-of-type(1) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 2s;
+    color: rgb(19, 174, 104);
+  }
+  
+  .rotatingText-adjective:nth-of-type(2) {
+    animation-name: rotate;
+    animation-duration: 1.5s;
+    animation-delay: 0.75s;
+    color: rgb(24, 213, 197);
+  }
+  
+  .rotatingText-adjective:nth-of-type(3) {
+    animation-name: rotate;
+    animation-duration: 1.4s;
+    animation-delay: 5s;
+    color: rgb(7, 162, 152);
+  }
+
+  @keyframes rotate-last {
+    0% {
+      opacity: 0;
+    }
+    
+    100% {
+      opacity: 1;
+    }
+  }
+  .rotatingText-adjective:nth-of-type(3) {
+    animation-name: rotate-last;
+    animation-duration: 1s;
+    animation-delay: 3s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes rotate {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 50px, 0);
+    }
+    
+    20%, 80% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+    
+    100% {
+      opacity: 0;
+      transform: translate3d(0, -25px, 0);
+    }
+  }
+  @keyframes rotate-last {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 50px, 0);
+    }
+    
+    50%, 100% {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 .btn {
     background: #8dc9f1;
     background-image: -webkit-linear-gradient(top, #34cddb, #17dde8);
